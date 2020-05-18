@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on qiangqiang Blog</title>
+    <link>https://xqq85.github.io/post/</link>
+    <description>Recent content in Posts on qiangqiang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://xqq85.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>10-排序6 Sort with Swap(0, i)</title>
+      <link>https://xqq85.github.io/2020/5/15bihuan/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xqq85.github.io/2020/5/15bihuan/</guid>
+      <description>题目来自&amp;mdash;中国大学MOOC-陈越、何钦铭-数据结构-2020春 Given any permutation of the numbers {0, 1, 2,&amp;hellip;, N−1}, it is easy to sort them in increasing order. But what if Swap(0, *) is the ONLY operation that</description>
+    </item>
+    
+    <item>
+      <title>欢迎来到徐强强的博客</title>
+      <link>https://xqq85.github.io/2020/5/15hello-world/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xqq85.github.io/2020/5/15hello-world/</guid>
+      <description>“Yeah It&amp;rsquo;s on. ” Hello World!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://xqq85.github.io/tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xqq85.github.io/tips/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

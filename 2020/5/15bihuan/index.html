@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="qiangqiang Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://xqq85.github.io//img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://xqq85.github.io//img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="10-排序6 Sort with Swap(0, i)" />
+    <meta property="og:title" content="10-排序6 Sort with Swap(0, i)" />
+    <meta property="twitter:title" content="10-排序6 Sort with Swap(0, i)" />
+    
+
+    
+    <meta name="description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。">
+    <meta property="og:description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。" />
+    <meta property="twitter:description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="徐强强, xuqiangqiang, xuqiangqiang, , 徐强强的网络日志, 徐强强的博客, xuqiangqiang Blog, 博客, 个人网站, 互联网, Web, 云原生, 微服务, Microservice">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>10-排序6 Sort with Swap(0, i)-徐强强的博客 | xuqiangqiang Blog</title>
+
+    <link rel="canonical" href="/2020/5/15bihuan/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">qiangqiang Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tips">tips</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/books/">BOOKS</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/bihuan.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>10-排序6 Sort with Swap(0, i)</h1>
+                    <h2 class="subheading">给定N个序列，每次只使用Swap(0, *)实现排序</h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            徐强强
+                         
+                        on 
+                        Saturday, May 16, 2020
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目来自---中国大学mooc-陈越何钦铭-数据结构-2020春">题目来自&mdash;中国大学MOOC-陈越、何钦铭-数据结构-2020春</a></li>
+        <li><a href="#解题思路">解题思路</a></li>
+        <li><a href="#代码c语言实现">代码（C语言实现）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h2 id="题目来自---中国大学mooc-陈越何钦铭-数据结构-2020春">题目来自&mdash;中国大学MOOC-陈越、何钦铭-数据结构-2020春</h2>
+<p>Given any permutation of the numbers {0, 1, 2,&hellip;, N−1}, it is easy to sort them in increasing order. But what if Swap(0, *) is the ONLY operation that is allowed to use? For example, to sort {4, 0, 2, 1, 3} we may apply the swap operations in the following way:
+Swap(0, 1) =&gt; {4, 1, 2, 0, 3}
+Swap(0, 3) =&gt; {4, 1, 2, 3, 0}
+Swap(0, 4) =&gt; {0, 1, 2, 3, 4}</p>
+<p>Now you are asked to find the minimum number of swaps need to sort the given permutation of the first N nonnegative integers.
+Input Specification:
+Each input file contains one test case, which gives a positive N (≤10) followed by a permutation sequence of {0, 1, &hellip;, N−1}. All the numbers in a line are separated by a space.
+Output Specification:
+For each case, simply print in a line the minimum number of swaps need to sort the given permutation.</p>
+<p>Sample Input:
+10
+3 5 7 2 6 4 9 0 8 1</p>
+<p>Sample Output:
+9</p>
+<h2 id="解题思路">解题思路</h2>
+<p>思考N个序列里有多少个环，并且环的种类。</p>
+<p>单环不需要和0交换，其它的环思考是否有0元素；</p>
+<p>有0元素的只需交换环中元素-1；</p>
+<p>环中没有0元素，则环中任意一个元素先要和0交换，总共交换次数为环中元素个数。</p>
+<h2 id="代码c语言实现">代码（C语言实现）</h2>
+<p>#include&lt;stdio.h&gt;</p>
+<p>#include&lt;malloc.h&gt;</p>
+<p>int a[100000];</p>
+<p>int main()</p>
+<p>{</p>
+<pre><code>int N,i,j;
+
+int ring = 1;
+
+int count = 0;
+
+int flag = 0;
+
+scanf(&quot;%d\n&quot;,&amp;N);
+
+for(i=0;i&lt;N;i++){//输入a[]
+
+    scanf(&quot;%d&quot;,&amp;a[i]);
+	
+}
+
+for(i=0;i&lt;N;i++)
+
+{
+
+    if( a[i] != i )
+	
+    {
+	
+        count++;
+		
+    }
+	
+}
+
+if( a[0] == 0 )
+
+    count++;
+	
+while(1)
+
+{
+
+    if( a[flag] != flag )
+	
+    {
+	
+        j = a[flag];
+		
+        a[flag] = flag;
+		
+        flag = j;
+		
+    }
+	
+    else
+	
+    {
+	
+        for(i=0;i&lt;N;i++)
+		
+        {
+		
+            if(a[i] != i)
+			
+            {
+			
+                flag = i;
+				
+                ring++;
+				
+                break;
+				
+            }
+			
+        }
+		
+        if( i == N )
+		
+            break;
+			
+    }
+	
+}
+
+//printf(&quot;%d %d\n&quot;, count, ring);
+
+printf(&quot;%d\n&quot;, count+ring-2);
+
+return 0;
+</code></pre>
+<p>}</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://xqq85.github.io/"><img src="/img/favicon.png" />qiangqiang Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="2020/5/15hello-world/" data-toggle="tooltip" data-placement="top" title="欢迎来到徐强强的博客">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://xqq85.github.io/">我的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    <li>
+                        <a href="mailto:youremail@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://wx.qq.com/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/yourgithub">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; qiangqiang Blog 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>
