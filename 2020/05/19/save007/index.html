@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="06-图2 Saving James Bond - Easy Version" />
+    <meta property="og:title" content="06-图2 Saving James Bond - Easy Version" />
+    <meta property="twitter:title" content="06-图2 Saving James Bond - Easy Version" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="徐强强, xuqiangqiang, xuqiangqiang, , 徐强强的网络日志, 徐强强的博客, xuqiangqiang Blog, 博客, 个人网站, 互联网, Web, 云原生, 微服务, Microservice">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Tops-徐强强的博客 | xuqiangqiang Blog</title>
+    <title>06-图2 Saving James Bond - Easy Version-徐强强的博客 | xuqiangqiang Blog</title>
 
-    <link rel="canonical" href="/top/">
+    <link rel="canonical" href="/2020/05/19/save007">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -154,14 +154,33 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/save007.jpg')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>qiangqiang Blog </h1>
-                    
-		    <span class="subheading">路还很远，前方会发现不一样的风景</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>06-图2 Saving James Bond - Easy Version</h1>
+                    <h2 class="subheading">拯救007</h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            徐强强
+                         
+                        on 
+                        Tuesday, May 19, 2020
+                        
+                        
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -174,13 +193,216 @@
 <article>
     <div class="container">
         <div class="row">
+
             
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-11 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目来自---中国大学mooc-陈越何钦铭-数据结构-2020春">题目来自&mdash;中国大学MOOC-陈越、何钦铭-数据结构-2020春</a></li>
+        <li><a href="#解题思路">解题思路</a></li>
+        <li><a href="#代码c语言实现">代码（C语言实现）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h2 id="题目来自---中国大学mooc-陈越何钦铭-数据结构-2020春">题目来自&mdash;中国大学MOOC-陈越、何钦铭-数据结构-2020春</h2>
+<h3 id="06-图2-saving-james-bond---easy-version">06-图2 Saving James Bond - Easy Version</h3>
+<p>This time let us consider the situation in the movie &ldquo;Live and Let Die&rdquo; in which James Bond, the world&rsquo;s most famous spy, was captured by a group of drug dealers. He was sent to a small piece of land at the center of a lake filled with crocodiles. There he performed the most daring action to escape &ndash; he jumped onto the head of the nearest crocodile! Before the animal realized what was happening, James jumped again onto the next big head&hellip; Finally he reached the bank before the last crocodile could bite him (actually the stunt man was caught by the big mouth and barely escaped with his extra thick boot).
+Assume that the lake is a 100 by 100 square one. Assume that the center of the lake is at (0,0) and the northeast corner at (50,50). The central island is a disk centered at (0,0) with the diameter of 15. A number of crocodiles are in the lake at various positions. Given the coordinates of each crocodile and the distance that James could jump, you must tell him whether or not he can escape.</p>
+<h3 id="input-specification">Input Specification:</h3>
+<p>Each input file contains one test case. Each case starts with a line containing two positive integers N (≤100), the number of crocodiles, and D, the maximum distance that James could jump. Then N lines follow, each containing the (x,y) location of a crocodile. Note that no two crocodiles are staying at the same position.
+Output Specification:
+For each test case, print in a line &ldquo;Yes&rdquo; if James can escape, or &ldquo;No&rdquo; if not.</p>
+<h3 id="sample-input-1">Sample Input 1:</h3>
+<p>14 20
+25 -15
+-25 28
+8 49
+29 15
+-35 -2
+5 28
+27 -29
+-8 -28
+-20 -35
+-25 -20
+-13 29
+-30 15
+-35 40
+12 12</p>
+<h3 id="sample-output-1">Sample Output 1:</h3>
+<p>Yes</p>
+<h3 id="sample-input-2">Sample Input 2:</h3>
+<p>4 13
+-12 12
+12 12
+-12 -12
+12 -12</p>
+<h3 id="sample-output-2">Sample Output 2:</h3>
+<p>No</p>
+<h2 id="解题思路">解题思路</h2>
+<ol>
+<li>题目要求：James Bond在100*100的湖中央，湖中有许多鳄鱼，并且给了坐标；James Bond每次可以跳到一个鳄鱼的头上，并且James Bond的跳远距离有限制，告诉James Bond他可不可以跳到岸上。</li>
+<li>James Bond的第一跳距离与之后的跳远距离不同，所以第一跳要单独考虑；</li>
+<li>对鳄鱼节点采用邻接矩阵存储，邻接矩阵相比邻接表简单；</li>
+<li>本题采用深度优先搜索算法遍历图中节点，对图中的节点需要判断是否为安全，如果安全则可以跳到岸上，如果遍历完所有节点还不可以跳到岸上，则返回不可以跳到岸上。</li>
+</ol>
+<h2 id="代码c语言实现">代码（C语言实现）</h2>
+<p>include &lt;stdio.h&gt;<br>
+include &lt;stdlib.h&gt;<br>
+include &lt;stdbool.h&gt;<br>
+include &lt;math.h&gt;</p>
+<p>define MaxVertexNum 100     /* 最大顶点数设为100 */<br>
+define YES 1<br>
+define NO 0<br>
+typedef int Vertex;         /* 用顶点下标表示顶点,为整型 */</p>
+<p>/* 图结点的定义 */<br>
+typedef struct GNode *PtrToGNode;<br>
+struct GNode{</p>
+<pre><code>int Nv;  /* 顶点数 */  
+double G[MaxVertexNum][2]; /* 顶点坐标 */  
+</code></pre>
+<p>};<br>
+typedef PtrToGNode MGraph; /* 以邻接矩阵存储的图类型 */</p>
+<p>bool <em>Visited;<br>
+double L;<br>
+MGraph Graph; /</em> 建立图 */</p>
+<p>int FirstJump(Vertex V)<br>
+{</p>
+<pre><code>    return Graph-&gt;G[V][0]*Graph-&gt;G[V][0]+Graph-&gt;G[V][1]*Graph-&gt;G[V][1]&lt;=(L+15.0)*(L+15.0);	  
+</code></pre>
+<p>}</p>
+<p>int IsSafe(Vertex V)<br>
+{</p>
+<pre><code>return abs(Graph-&gt;G[V][0])+L&gt;=50.0 || abs(Graph-&gt;G[V][1])+L&gt;=50.0;  
+</code></pre>
+<p>}</p>
+<p>int Jump(int V,int W)<br>
+{</p>
+<pre><code>return (Graph-&gt;G[V][0] - Graph-&gt;G[W][0])*(Graph-&gt;G[V][0] - Graph-&gt;G[W][0])+  
+    (Graph-&gt;G[V][1] - Graph-&gt;G[W][1])*(Graph-&gt;G[V][1] - Graph-&gt;G[W][1])&lt;=L*L;  
+</code></pre>
+<p>}</p>
+<p>int DFS ( Vertex V )<br>
+{</p>
+<pre><code>Vertex W;  
+int answer = NO;  
+Visited[V] = true;  
+if ( IsSafe(V) )   
+    answer = YES;  
+else   
+{  
+    for ( W=0; W&lt;Graph-&gt;Nv; W++ ) /* 对图中的每个顶点W */  
+        if ( !Visited[W] &amp;&amp; Jump(V,W))   
+        {  
+            answer = DFS( W );  
+            if (answer==YES)   
+                break;  
+        }  
+}  
+return answer;  
+</code></pre>
+<p>}</p>
+<p>void Save007 ( MGraph G )<br>
+{</p>
+<pre><code>Vertex V;  
+int answer = NO;  
+for ( V=0; V&lt;Graph-&gt;Nv; V++ ) /* 对图中的每个顶点V */  
+{  
+    if (!Visited[V] &amp;&amp; FirstJump(V))   
+    {  
+        answer = DFS( V );  
+        if (answer==YES) break;  
+    }  
+}  
+if (answer==YES)   
+    printf(&quot;Yes&quot;);  
+else   
+    printf(&quot;No&quot;);  
+</code></pre>
+<p>}</p>
+<p>int main()<br>
+{</p>
+<pre><code>int i;  
+Graph = (MGraph)malloc(sizeof(struct GNode)); /* 建立图 */  
+scanf(&quot;%d %lf\n&quot;, &amp;Graph-&gt;Nv, &amp;L);/* 读入顶点个数 读入边数*/  
+Visited = (bool *)malloc(Graph-&gt;Nv*sizeof(bool));  
+for( i=0; i&lt;Graph-&gt;Nv; i++ )  
+    scanf(&quot;%lf %lf\n&quot;, &amp;Graph-&gt;G[i][0], &amp;Graph-&gt;G[i][1]);/* 读入顶点坐标*/  
+if (L &gt;= 35) {			//假设能直接跳到岸上，直接返回结果  
+    printf(&quot;Yes\n&quot;);  
+    return 0;  
+}  
+Save007(Graph);  
+return 0;  
+</code></pre>
+<p>}</p>
+<h4 id="如有写的不对的地方欢迎在评论区留言指正">如有写的不对的地方，欢迎在评论区留言指正！</h4>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://xqq85.github.io/"><img src="/img/favicon.png" />qiangqiang Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="2020/5/15bihuan/" data-toggle="tooltip" data-placement="top" title="10-排序6 Sort with Swap(0, i)">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
                 
 <div id="disqus-comment"></div>
 
@@ -189,7 +411,7 @@
             </div>
             
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-11 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 sidebar-container">
 
