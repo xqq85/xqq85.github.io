@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="Tips" />
-    <meta property="og:title" content="Tips" />
-    <meta property="twitter:title" content="Tips" />
+    <meta name="title" content="Linux常用命令" />
+    <meta property="og:title" content="Linux常用命令" />
+    <meta property="twitter:title" content="Linux常用命令" />
     
 
     
-    <meta name="description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。">
-    <meta property="og:description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。" />
-    <meta property="twitter:description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。" />
+    <meta name="description" content="Linux常用命令">
+    <meta property="og:description" content="Linux常用命令" />
+    <meta property="twitter:description" content="Linux常用命令" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="徐强强, xuqiangqiang, xuqiangqiang, , 徐强强的网络日志, 徐强强的博客, xuqiangqiang Blog, 博客, 个人网站, 互联网, Web, 云原生, 微服务, Microservice">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Tips-徐强强的博客 | xuqiangqiang Blog</title>
+    <title>Linux常用命令-徐强强的博客 | xuqiangqiang Blog</title>
 
-    <link rel="canonical" href="/tags/tips/">
+    <link rel="canonical" href="/Linux%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -154,14 +154,37 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/Linux.jpg')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>qiangqiang Blog </h1>
-                    
-		    <span class="subheading">路还很远，前方会发现不一样的风景</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tips" title="Tips">
+                            Tips
+                        </a>
+                        
+                    </div>
+                    <h1>Linux常用命令</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            徐强强
+                         
+                        on 
+                        Monday, May 25, 2020
+                        
+                        
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -170,190 +193,187 @@
 
 
 
-  
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
 
-<div class="post-preview">
-    <a href="https://xqq85.github.io/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-        <h2 class="post-title">
-            Linux常用命令
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            Linux常用命令
-        
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by 徐强强 Monday, May 25, 2020
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://xqq85.github.io/tips/">
-        <h2 class="post-title">
-            
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by 徐强强 Monday, January 1, 0001
-    
-    
-    </p>
-
-</div>
-<hr>
-
+<article>
+    <div class="container">
+        <div class="row">
 
             
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
 
-
-
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-             
-            
                 
-                    <a href="/tags/tips" title="tips">
-                        tips
-                    </a>
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#目录操作">目录操作</a></li>
+        <li><a href="#文件相关的操作">文件相关的操作</a></li>
+        <li><a href="#其它常用命令">其它常用命令</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 
-            
+                <h2 id="目录操作">目录操作</h2>
+<h3 id="大多数命令都有命令---help命令">大多数命令都有(命令 &ndash;help)命令</h3>
+<h3 id="查询ip地址命令">查询IP地址命令</h3>
+<p>ifconfig</p>
+<h3 id="列出文件列表-lsll">列出文件列表： ls，ll</h3>
+<p>当前目录：pwd<br>
+列出文件列表：ls<br>
+列出所有文件（包括隐藏文件）：ls   -a<br>
+显示非隐藏文件的详细信息：ls   -l（可以简写为ll）</p>
+<h3 id="切换目录命令cd按tab键可以提示补全">切换目录命令：cd（按tab键可以提示补全）</h3>
+<p>退回上一级目录：cd   ..<br>
+退回根目录：cd   /<br>
+用户主目录：cd   ~<br>
+返回上一次目录：cd   -</p>
+<h3 id="创建目录移除目录-mkdirrmdir">创建目录/移除目录： mkdir，rmdir</h3>
+<p>可以查看mkdir   &ndash; help帮助<br>
+创建多级目录：mkdir   -p   aaa/bbb<br>
+rmdir只可以删除空的文件夹</p>
+<h2 id="文件相关的操作">文件相关的操作</h2>
+<h3 id="浏览文件catmoreless">浏览文件：cat，more，less</h3>
+<p>查看所有文件内容：cat   文件名<br>
+一次显示一屏：more（按q/clrl+c可以退出）<br>
+less与more类似，多出了按上下键翻动<br>
+查看文件的最后n行：tail   -n<br>
+动态实时监控文件的变化：tail   -f</p>
+<h3 id="文件的删除复制剪切rm-cpmv">文件的删除、复制、剪切：rm， cp，mv</h3>
+<p>将a.txt复制到bbb/b.txt文件：cp   a.txt   bbb/b.txt<br>
+将a.txt文件移动到上一层目录中：mv   a.txt   ../<br>
+删除文件：rm<br>
+删除目录：rm   -r<br>
+删除目录不询问：rm   -rf（r f可以分开使用）<br>
+删除所有文件：rm   -rf   *<br>
+自杀：rm   -rf   /*</p>
+<h3 id="打包或压缩tar">打包或压缩：tar</h3>
+<p>常用参数：<br>
+-c：创建一个新tar文件<br>
+-v：显示运行过程的信息<br>
+-f：指定文件名<br>
+-z：调用gzip压缩命令进行压缩<br>
+-t：查看压缩文件的内容<br>
+-x：解开tar文件<br>
+打包：  tar   –cvf   xxx.tar   ./*<br>
+打包并且压缩：  tar   –zcvf   xxx.tar.gz   ./*<br>
+解压当前目录：tar   –xvf   xxx.tar<br>
+解压指定目录（大写C）：tar   -xvf   xxx.tar.gz   -C   /usr/aaa</p>
+<h3 id="查找命令">查找命令</h3>
+<p>查找符合条件的文件：find   /   -name   xxx*.xxx<br>
+查找符合条件的字符串：grep   lang   anaconda-ks.cfg   &ndash;color（高亮显示）   -A1（多显示后一行）   -B1（多显示前一行）</p>
+<h2 id="其它常用命令">其它常用命令</h2>
+<p>创建一个空文件：touch<br>
+清屏：clear/ctrl+L</p>
+
+
                 
-            
-        </div>
-    </section>
+                
+<div class="entry-shang text-center">
     
-
-    
+	    <p>「真诚赞赏，手留余香」</p>
 	
-    <section class="visible-md visible-lg">
-	<hr><h5><a href="/top/about">ABOUT ME</a></h5>
-        <div class="short-about">
-            
-            <a href="/top/about">
-               <img src="/img/myportrait.jpg" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>Software Developer, Open Source Enthusiast</p>
-            
-           
-           <ul class="list-inline"> 
-               
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://wx.qq.com/">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/yourgithub">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-                    <li>
-                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-            
-            
-               
-               
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-            
-            <li><a target="_blank" href="/">我的博客</a></li>
-            
-        </ul>
-    </section>
-    
-
-    
-    
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
 </div>
-
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://xqq85.github.io/"><img src="/img/favicon.png" />qiangqiang Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
 	</div>
 </div>
+<script type="text/javascript" src="/js/reward.js"></script>
 
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="2020/05/19/save007" data-toggle="tooltip" data-placement="top" title="06-图2 Saving James Bond - Easy Version">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/tips" title="tips">
+                            tips
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://xqq85.github.io/">我的博客</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
 
 
 
