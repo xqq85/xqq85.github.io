@@ -215,6 +215,10 @@
         <li><a href="#目录操作">目录操作</a></li>
         <li><a href="#文件相关的操作">文件相关的操作</a></li>
         <li><a href="#其它常用命令">其它常用命令</a></li>
+        <li><a href="#系统管理命令">系统管理命令</a></li>
+        <li><a href="#管道其作用是将前面命令的输出用作后面命令的输入">管道：其作用是将前面命令的输出用作后面命令的输入</a></li>
+        <li><a href="#linux权限命令">Linux权限命令</a></li>
+        <li><a href="#linux上常用网络命令">Linux上常用网络命令</a></li>
       </ul>
     </li>
   </ul>
@@ -271,6 +275,76 @@ less与more类似，多出了按上下键翻动<br>
 <h2 id="其它常用命令">其它常用命令</h2>
 <p>创建一个空文件：touch<br>
 清屏：clear/ctrl+L</p>
+<h2 id="系统管理命令">系统管理命令</h2>
+<h3 id="ps-正在运行的某个进程的状态">ps： 正在运行的某个进程的状态</h3>
+<p>ps   -ef   查看所有的进程<br>
+ps   -ef   |   grey   ssh   查看某一进程<br>
+kill   2868  杀死编号为2868的进程<br>
+kill   -9   2868  强制杀死进程</p>
+<h2 id="管道其作用是将前面命令的输出用作后面命令的输入">管道：其作用是将前面命令的输出用作后面命令的输入</h2>
+<p>ls   &ndash;help   |   more   分页查询帮助信息<br>
+ps   –ef     |   grep   java   查询名称中包含java的进程<br>
+ifconfig   |   more<br>
+cat   index.html   |   more<br>
+ps   –ef   |   grep   aio</p>
+<h2 id="linux权限命令">Linux权限命令</h2>
+<h3 id="linux三种文件类型">Linux三种文件类型</h3>
+<p>普通文件： 包括文本文件、数据文件、可执行的二进制程序文件等<br>
+目录文件： Linux系统把目录看成是一种特殊的文件，利用它构成文件系统的树型结构  <br>
+设备文件： Linux系统把每一个设备都看成是一个文件</p>
+<h3 id="文件权限">文件权限</h3>
+<p>权限可以分为四部分-   &mdash;    &mdash;    &mdash;<br>
+1.代表文件类型<br>
+  —：表示文件<br>
+  d：表示文件夹<br>
+  l：表示链接<br>
+2.当前用户具有该文件的权限<br>
+  r：read读                   表示数字4 <br>
+  w：write写                  表示数字2<br>
+  x：excute执行             表示数字1<br>
+3.当前组内其他用户具有该文件的权限<br>
+  r：read读<br>
+  w：write写<br>
+  x：excute执行<br>
+4.其他组内的用户具有该文件的权限<br>
+  r：read读<br>
+  w：write写<br>
+  x：excute执行</p>
+<h3 id="修改权限">修改权限</h3>
+<p>chmod 变更文件或目录的权限<br>
+    chmod   755   a.txt<br>
+    chmod   u=rwx,g=rx,o=rx   a.txt</p>
+<h2 id="linux上常用网络命令">Linux上常用网络命令</h2>
+<h3 id="主机名配置">主机名配置</h3>
+<p>hostname查看主机名<br>
+hostname   xxx   修改主机名   重启后失效<br>
+修改/etc/sysconfig/network文件，可永久生效</p>
+<h3 id="ip地址配置">IP地址配置</h3>
+<p>ifconfig查看（修改）ip地址（重启后失效）<br>
+    ifconfig   eth0   192.168.13.129   修改ip地址<br>
+如果想要永久生效，修改文件/etc/sysconfig/network-scripts/ifcfg-eth0<br>
+DEVICE=eth0   网卡名称<br>
+BOOTPROTE=static   获取ip的方式（static/dhcp/bootp/none）<br>
+HWADDR=00:0c:29:B5:B2:69   MAC地址</p>
+<p>IPADDR=192.168.13.130  IP地址<br>
+NETMASK=255.255.255.0   子网掩码<br>
+NETWORK=192.168.177.0   网络地址<br>
+BROADCAST=192.168.0.255   广播地址</p>
+<p>NBOOT=yes   系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备</p>
+<h3 id="域名映射">域名映射</h3>
+<p>/etc/hosts文件用于在通过主机名进行访问时做ip地址解析之用，相当于windows系统的C:/Windows/System32/drivers/etc/hosts文件的功能</p>
+<h3 id="网络服务管理">网络服务管理</h3>
+<p>service   network   status   查看指定服务的状态<br>
+service   network   stop   停止指定的服务<br>
+service   network   start   启动指定服务<br>
+service   network   restart   重启指定服务</p>
+<p>service   &ndash;status-all   查看系统中所有后台服务<br>
+netstat   -nltp   查看系统中网络进程的端口监听情况</p>
+<p>防火墙根据配置文件/etc/sysconfig/iptables来控制本机的“出”，“入”网络访问行为<br>
+service   iptables   status   查看防火墙状态<br>
+service   iptables   stop   关闭防火墙<br>
+service   iptables   start   启动防火墙<br>
+chkconfig   iptables   off   禁止防火墙自启</p>
 
 
                 
@@ -324,6 +398,11 @@ less与more类似，多出了按上下键翻动<br>
                     </li>
                     
                     
+                    <li class="next">
+                        <a href="/Vi%e5%92%8cVim%e7%bc%96%e8%be%91%e5%99%a8/" data-toggle="tooltip" data-placement="top" title="Vi和Vim编辑器">Next
+                            Post &rarr;</a>
+                    </li>
+                    
                 </ul>
 
                 
@@ -350,8 +429,6 @@ less与more类似，多出了按上下键翻动<br>
                         <a href="/tags/tips" title="tips">
                             tips
                         </a>
-                        
-                        
                         
                         
                     </div>
