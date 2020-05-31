@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="06-图2 Saving James Bond - Easy Version" />
-    <meta property="og:title" content="06-图2 Saving James Bond - Easy Version" />
-    <meta property="twitter:title" content="06-图2 Saving James Bond - Easy Version" />
+    <meta name="title" content="Linux软件安装" />
+    <meta property="og:title" content="Linux软件安装" />
+    <meta property="twitter:title" content="Linux软件安装" />
     
 
     
-    <meta name="description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。">
-    <meta property="og:description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。" />
-    <meta property="twitter:description" content="徐强强，程序员, 开源爱好者 | 这里是 徐强强 的博客，与你一起发现更大的世界。" />
+    <meta name="description" content="Linux软件安装">
+    <meta property="og:description" content="Linux软件安装" />
+    <meta property="twitter:description" content="Linux软件安装" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="徐强强, xuqiangqiang, xuqiangqiang, , 徐强强的网络日志, 徐强强的博客, xuqiangqiang Blog, 博客, 个人网站, 互联网, Web, 云原生, 微服务, Microservice">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>06-图2 Saving James Bond - Easy Version-徐强强的博客 | xuqiangqiang Blog</title>
+    <title>Linux软件安装-徐强强的博客 | xuqiangqiang Blog</title>
 
-    <link rel="canonical" href="/2020/05/19/save007">
+    <link rel="canonical" href="/Linux%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -157,7 +157,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/save007.jpg')
+        background-image: url('/img/linuxinstall.jpg')
     }
 </style>
 <header class="intro-header">
@@ -167,16 +167,20 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                        <a class="tag" href="/tags/tips" title="Tips">
+                            Tips
+                        </a>
+                        
                     </div>
-                    <h1>06-图2 Saving James Bond - Easy Version</h1>
-                    <h2 class="subheading">拯救007</h2>
+                    <h1>Linux软件安装</h1>
+                    <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 
                         
                             徐强强
                          
                         on 
-                        Tuesday, May 19, 2020
+                        Monday, May 25, 2020
                         
                         
                         
@@ -208,146 +212,122 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#题目来自---中国大学mooc-陈越何钦铭-数据结构-2020春">题目来自&mdash;中国大学MOOC-陈越、何钦铭-数据结构-2020春</a></li>
-        <li><a href="#解题思路">解题思路</a></li>
-        <li><a href="#代码c语言实现">代码（C语言实现）</a></li>
+        <li><a href="#linux上安装软件常用方式">Linux上安装软件常用方式</a></li>
+        <li><a href="#上传与下载工具">上传与下载工具</a></li>
+        <li><a href="#安装jdk">安装jdk</a></li>
+        <li><a href="#安装mysql">安装Mysql</a></li>
+        <li><a href="#安装redisredis是源码需要先编译">安装redis（redis是源码，需要先编译）</a></li>
       </ul>
     </li>
   </ul>
 </nav>
                 
-                <h2 id="题目来自---中国大学mooc-陈越何钦铭-数据结构-2020春">题目来自&mdash;中国大学MOOC-陈越、何钦铭-数据结构-2020春</h2>
-<h3 id="06-图2-saving-james-bond---easy-version">06-图2 Saving James Bond - Easy Version</h3>
-<p>This time let us consider the situation in the movie &ldquo;Live and Let Die&rdquo; in which James Bond, the world&rsquo;s most famous spy, was captured by a group of drug dealers. He was sent to a small piece of land at the center of a lake filled with crocodiles. There he performed the most daring action to escape &ndash; he jumped onto the head of the nearest crocodile! Before the animal realized what was happening, James jumped again onto the next big head&hellip; Finally he reached the bank before the last crocodile could bite him (actually the stunt man was caught by the big mouth and barely escaped with his extra thick boot).
-Assume that the lake is a 100 by 100 square one. Assume that the center of the lake is at (0,0) and the northeast corner at (50,50). The central island is a disk centered at (0,0) with the diameter of 15. A number of crocodiles are in the lake at various positions. Given the coordinates of each crocodile and the distance that James could jump, you must tell him whether or not he can escape.</p>
-<h3 id="input-specification">Input Specification:</h3>
-<p>Each input file contains one test case. Each case starts with a line containing two positive integers N (≤100), the number of crocodiles, and D, the maximum distance that James could jump. Then N lines follow, each containing the (x,y) location of a crocodile. Note that no two crocodiles are staying at the same position.
-Output Specification:
-For each test case, print in a line &ldquo;Yes&rdquo; if James can escape, or &ldquo;No&rdquo; if not.</p>
-<h3 id="sample-input-1">Sample Input 1:</h3>
-<p>14 20
-25 -15
--25 28
-8 49
-29 15
--35 -2
-5 28
-27 -29
--8 -28
--20 -35
--25 -20
--13 29
--30 15
--35 40
-12 12</p>
-<h3 id="sample-output-1">Sample Output 1:</h3>
-<p>Yes</p>
-<h3 id="sample-input-2">Sample Input 2:</h3>
-<p>4 13
--12 12
-12 12
--12 -12
-12 -12</p>
-<h3 id="sample-output-2">Sample Output 2:</h3>
-<p>No</p>
-<h2 id="解题思路">解题思路</h2>
-<ol>
-<li>题目要求：James Bond在100*100的湖中央，湖中有许多鳄鱼，并且给了坐标；James Bond每次可以跳到一个鳄鱼的头上，并且James Bond的跳远距离有限制，告诉James Bond他可不可以跳到岸上。</li>
-<li>James Bond的第一跳距离与之后的跳远距离不同，所以第一跳要单独考虑；</li>
-<li>对鳄鱼节点采用邻接矩阵存储，邻接矩阵相比邻接表简单；</li>
-<li>本题采用深度优先搜索算法遍历图中节点，对图中的节点需要判断是否为安全，如果安全则可以跳到岸上，如果遍历完所有节点还不可以跳到岸上，则返回不可以跳到岸上。</li>
-</ol>
-<h2 id="代码c语言实现">代码（C语言实现）</h2>
-<p>include &lt;stdio.h&gt;<br>
-include &lt;stdlib.h&gt;<br>
-include &lt;stdbool.h&gt;<br>
-include &lt;math.h&gt;</p>
-<p>define MaxVertexNum 100     /* 最大顶点数设为100 */<br>
-define YES 1<br>
-define NO 0<br>
-typedef int Vertex;         /* 用顶点下标表示顶点,为整型 */</p>
-<p>/* 图结点的定义 */<br>
-typedef struct GNode *PtrToGNode;<br>
-struct GNode{</p>
-<pre><code>int Nv;  /* 顶点数 */  
-double G[MaxVertexNum][2]; /* 顶点坐标 */  
-</code></pre>
-<p>};<br>
-typedef PtrToGNode MGraph; /* 以邻接矩阵存储的图类型 */</p>
-<p>bool <em>Visited;<br>
-double L;<br>
-MGraph Graph; /</em> 建立图 */</p>
-<p>int FirstJump(Vertex V)<br>
-{</p>
-<pre><code>    return Graph-&gt;G[V][0]*Graph-&gt;G[V][0]+Graph-&gt;G[V][1]*Graph-&gt;G[V][1]&lt;=(L+15.0)*(L+15.0);	  
-</code></pre>
-<p>}</p>
-<p>int IsSafe(Vertex V)<br>
-{</p>
-<pre><code>return abs(Graph-&gt;G[V][0])+L&gt;=50.0 || abs(Graph-&gt;G[V][1])+L&gt;=50.0;  
-</code></pre>
-<p>}</p>
-<p>int Jump(int V,int W)<br>
-{</p>
-<pre><code>return (Graph-&gt;G[V][0] - Graph-&gt;G[W][0])*(Graph-&gt;G[V][0] - Graph-&gt;G[W][0])+  
-    (Graph-&gt;G[V][1] - Graph-&gt;G[W][1])*(Graph-&gt;G[V][1] - Graph-&gt;G[W][1])&lt;=L*L;  
-</code></pre>
-<p>}</p>
-<p>int DFS ( Vertex V )<br>
-{</p>
-<pre><code>Vertex W;  
-int answer = NO;  
-Visited[V] = true;  
-if ( IsSafe(V) )   
-    answer = YES;  
-else   
-{  
-    for ( W=0; W&lt;Graph-&gt;Nv; W++ ) /* 对图中的每个顶点W */  
-        if ( !Visited[W] &amp;&amp; Jump(V,W))   
-        {  
-            answer = DFS( W );  
-            if (answer==YES)   
-                break;  
-        }  
-}  
-return answer;  
-</code></pre>
-<p>}</p>
-<p>void Save007 ( MGraph G )<br>
-{</p>
-<pre><code>Vertex V;  
-int answer = NO;  
-for ( V=0; V&lt;Graph-&gt;Nv; V++ ) /* 对图中的每个顶点V */  
-{  
-    if (!Visited[V] &amp;&amp; FirstJump(V))   
-    {  
-        answer = DFS( V );  
-        if (answer==YES) break;  
-    }  
-}  
-if (answer==YES)   
-    printf(&quot;Yes&quot;);  
-else   
-    printf(&quot;No&quot;);  
-</code></pre>
-<p>}</p>
-<p>int main()<br>
-{</p>
-<pre><code>int i;  
-Graph = (MGraph)malloc(sizeof(struct GNode)); /* 建立图 */  
-scanf(&quot;%d %lf\n&quot;, &amp;Graph-&gt;Nv, &amp;L);/* 读入顶点个数 读入边数*/  
-Visited = (bool *)malloc(Graph-&gt;Nv*sizeof(bool));  
-for( i=0; i&lt;Graph-&gt;Nv; i++ )  
-    scanf(&quot;%lf %lf\n&quot;, &amp;Graph-&gt;G[i][0], &amp;Graph-&gt;G[i][1]);/* 读入顶点坐标*/  
-if (L &gt;= 35) {			//假设能直接跳到岸上，直接返回结果  
-    printf(&quot;Yes\n&quot;);  
-    return 0;  
-}  
-Save007(Graph);  
-return 0;  
-</code></pre>
-<p>}</p>
-<h4 id="如有写的不对的地方欢迎在评论区留言指正">如有写的不对的地方，欢迎在评论区留言指正！</h4>
+                <h2 id="linux上安装软件常用方式">Linux上安装软件常用方式</h2>
+<h3 id="二进制发布包">二进制发布包</h3>
+<p>软件已经针对具体平台编译打包发布，只要解压，修改配置即可</p>
+<h3 id="rpm包">RPM包</h3>
+<p>软件已经按照redhat的包管理工具规范RPM进行打包发布，需要获得相应的软件RPM发布包，然后用RPM命令进行安装</p>
+<h3 id="yum在线安装">Yum在线安装</h3>
+<p>软件已经以RPM规范打包，但发布在了网络上的一些服务器上，可用yum在线安装服务器山歌rpm软件，并且会自动解决软件安装过程的库依赖问题</p>
+<h3 id="源码编译安装">源码编译安装</h3>
+<p>软件以源码工程的形式发布，需要获得源码工程后用相应的开发工具进行编译打包部署</p>
+<h2 id="上传与下载工具">上传与下载工具</h2>
+<h3 id="filezilla">FileZilla</h3>
+<h3 id="lrzsz">lrzsz</h3>
+<p>需要在Linux上安装   yum   install   lrzsz</p>
+<h3 id="按altp">按ALT+P</h3>
+<p>使用   put   文件位置   命令上传文件（文件在Linux当前用户的操作目录里）<br>
+使用   get   文件   命令下载文件（下载到电脑文档目录）</p>
+<h2 id="安装jdk">安装jdk</h2>
+<h3 id="linux默认安装了jdk需要先卸载再安装自己的jdk版本">Linux默认安装了jdk，需要先卸载，再安装自己的jdk版本</h3>
+<h4 id="卸载open-jdk">卸载open-JDK</h4>
+<h5 id="查看jdk版本">查看jdk版本</h5>
+<p>java   -version</p>
+<h5 id="查看安装的jdk信息">查看安装的JDK信息</h5>
+<p>rpm   -qa   |   grep   java</p>
+<h5 id="卸载jdk">卸载jdk</h5>
+<p>rpm   -e   &ndash;nodeps   java-1.6.0-openjdk-1.6.0.35-1.13.7.1.e16_6.1686（JDK版本信息）</p>
+<h5 id="安装jdk-1">安装JDK</h5>
+<p>通常将软件安装到/usr/local<br>
+直接解压就可以<br>
+tar   -zxvf   jdk.tar.gz   -C   目标路径</p>
+<h5 id="配置环境变量">配置环境变量</h5>
+<p>vi /etc/profile<br>
+在末尾行添加<br>
+#set   java   environment<br>
+JAVA_HOME=/usr/local/jdk/jdk1.7.0_71(解压文件夹的名字)<br>
+CLASSPATH=.:$JAVA_HOME/lib.tools.jar<br>
+PATH=$JAVA_HOME/bin:$PATH<br>
+export   JAVA_HOME   CLASSPATH   PATH</p>
+<h5 id="重新加载文件etcprofile">重新加载文件/etc/profile</h5>
+<p>source /etc/profile</p>
+<h5 id="查看java安装情况">查看JAVA安装情况</h5>
+<p>java   -version</p>
+<h2 id="安装mysql">安装Mysql</h2>
+<h3 id="linux默认安装了mysql需要先卸载再安装自己的mysql版本">Linux默认安装了Mysql，需要先卸载，再安装自己的Mysql版本</h3>
+<h4 id="将mysql的安装文件上传到linux的服务器">将mysql的安装文件上传到Linux的服务器</h4>
+<h4 id="卸载mysql">卸载Mysql</h4>
+<h5 id="查看安装的mysql信息">查看安装的Mysql信息</h5>
+<p>rpm   -qa   |   grep   mysql</p>
+<h5 id="卸载mysql-1">卸载mysql</h5>
+<p>rpm   -e   &ndash;nodeps   mysql（JDK版本信息）</p>
+<h4 id="解压mysql">解压Mysql</h4>
+<p>通常将软件安装到/usr/local</p>
+<h5 id="解压文件">解压文件</h5>
+<p>tar   -xvf   mysql.tar   -C   目标路径（.tar是打包文件，不需要z）</p>
+<h5 id="安装客户端服务端">安装客户端/服务端</h5>
+<p>rpm -ivh MySQL-server-5.6.22-1.e16.i686.rpm（注意一句话关于随机密码的文件位置）<br>
+rpm -ivh MySQL-client-5.6.22-1.e16.i686.rpm</p>
+<h5 id="启动服务">启动服务</h5>
+<p>service mysql start</p>
+<h5 id="登录mysql">登录Mysql</h5>
+<p>mysql -uroot -p密码（在随机密码的文件里）</p>
+<h5 id="第一次访问需设置密码">第一次访问需设置密码</h5>
+<p>set password=password(&ldquo;密码&rdquo;)</p>
+<h5 id="操作数据库">操作数据库</h5>
+<p>show databases</p>
+<h5 id="退出数据库">退出数据库</h5>
+<p>exit</p>
+<h4 id="远程连接">远程连接</h4>
+<h5 id="开放远程连接">开放远程连接</h5>
+<p>grant all privileges on <em>.</em> to &lsquo;root&rsquo; @'%&rsquo; identified by &lsquo;root&rsquo;;（显示Query OK则成功）</p>
+<h5 id="刷新">刷新</h5>
+<p>flush privileges;</p>
+<h5 id="如果远程连接失败打开防火墙3306端口">如果远程连接失败，打开防火墙3306端口</h5>
+<p>/sbin/iptables -I INPUT -p tcp &ndash;dport 3306 -j ACCEPT<br>
+/etc/rc.d/init.d/iptables save<br>
+/etc/init.d/iptables status<br>
+学习阶段可以直接关闭防火墙<br>
+service iptables stop</p>
+<h2 id="安装redisredis是源码需要先编译">安装redis（redis是源码，需要先编译）</h2>
+<p>redis是C语言开发，安装redis需要先将官网下载的源码进行编译，编译依赖gcc环境。</p>
+<h3 id="安装gcc-c">安装gcc-c++</h3>
+<p>yum install gcc-c++</p>
+<h3 id="安装redis">安装redis</h3>
+<h5 id="下载redis">下载redis</h5>
+<p>wget <a href="http://download.redis.io/releases/redis-3.0.4.tar.gz">http://download.redis.io/releases/redis-3.0.4.tar.gz</a></p>
+<h5 id="解压">解压</h5>
+<p>tar -xzvf redis-3.0.4.tar.gz</p>
+<h5 id="编译安装">编译安装</h5>
+<p>切换到程序目录，并执行make命令编译<br>
+make<br>
+执行安装命令<br>
+make PREFIX=/usr/local/redis install<br>
+make install安装完成后，会在/usr/local/bin目录下生成下面几个可执行文件，它们的作用分别是：<br>
+redis-server:Redis服务器端启动程序<br>
+redis-cli:Redis客户端操作工具。也可以用telnet根据其纯文本协议来操作<br>
+redis-benchmark:Redis性能测试工具<br>
+redis-check-aof:数据修复工具<br>
+redis-check-dump:检查导出工具</p>
+<h5 id="配置redis">配置redis</h5>
+<p>复制配置文件到/usr/local/redis/bin目录：
+cp redis.conf /usr/local/redis/bin</p>
+<h3 id="启动redis">启动redis</h3>
+<p>在当前目录下启动<br>
+./redis-server redis.conf</p>
+<h3 id="启动客户端">启动客户端</h3>
+<p>在当前目录下启动<br>
+./redis-cli</p>
 
 
                 
@@ -396,13 +376,13 @@ return 0;
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="2020/5/15bihuan/" data-toggle="tooltip" data-placement="top" title="10-排序6 Sort with Swap(0, i)">&larr;
+                        <a href="2020/05/19/save007" data-toggle="tooltip" data-placement="top" title="06-图2 Saving James Bond - Easy Version">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/Linux%e8%bd%af%e4%bb%b6%e5%ae%89%e8%a3%85/" data-toggle="tooltip" data-placement="top" title="Linux软件安装">Next
+                        <a href="/Linux%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4/" data-toggle="tooltip" data-placement="top" title="Linux常用命令">Next
                             Post &rarr;</a>
                     </li>
                     

@@ -29,5 +29,14 @@
       <description>目录操作 大多数命令都有(命令 &amp;ndash;help)命令 查询IP地址命令 ifconfig 列出文件列表： ls，ll 当前目录：pwd 列出文件列表：ls 列出所有</description>
     </item>
     
+    <item>
+      <title>Linux软件安装</title>
+      <link>https://xqq85.github.io/linux%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xqq85.github.io/linux%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</guid>
+      <description>Linux上安装软件常用方式 二进制发布包 软件已经针对具体平台编译打包发布，只要解压，修改配置即可 RPM包 软件已经按照redhat的包管理工具</description>
+    </item>
+    
   </channel>
 </rss>
