@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="Vi和Vim编辑器" />
-    <meta property="og:title" content="Vi和Vim编辑器" />
-    <meta property="twitter:title" content="Vi和Vim编辑器" />
+    <meta name="title" content="Docker常用命令" />
+    <meta property="og:title" content="Docker常用命令" />
+    <meta property="twitter:title" content="Docker常用命令" />
     
 
     
-    <meta name="description" content="Vi和Vim编辑器">
-    <meta property="og:description" content="Vi和Vim编辑器" />
-    <meta property="twitter:description" content="Vi和Vim编辑器" />
+    <meta name="description" content="Docker常用命令">
+    <meta property="og:description" content="Docker常用命令" />
+    <meta property="twitter:description" content="Docker常用命令" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="徐强强, xuqiangqiang, xuqiangqiang, , 徐强强的网络日志, 徐强强的博客, xuqiangqiang Blog, 博客, 个人网站, 互联网, Web, 云原生, 微服务, Microservice">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Vi和Vim编辑器-徐强强的博客 | xuqiangqiang Blog</title>
+    <title>Docker常用命令-徐强强的博客 | xuqiangqiang Blog</title>
 
-    <link rel="canonical" href="/Vi%e5%92%8cVim%e7%bc%96%e8%be%91%e5%99%a8/">
+    <link rel="canonical" href="/Docker%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -157,7 +157,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/Vim.jpg')
+        background-image: url('/img/dockerimages.jpg')
     }
 </style>
 <header class="intro-header">
@@ -172,7 +172,7 @@
                         </a>
                         
                     </div>
-                    <h1>Vi和Vim编辑器</h1>
+                    <h1>Docker常用命令</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 
@@ -180,7 +180,7 @@
                             徐强强
                          
                         on 
-                        Tuesday, May 26, 2020
+                        Wednesday, June 3, 2020
                         
                         
                         
@@ -212,31 +212,78 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#三种模式命令行插入底行模式">三种模式：命令行、插入、底行模式</a></li>
-        <li><a href="#重定向输出和">重定向输出&gt;和&raquo;</a></li>
+        <li><a href="#镜像相关命令">镜像相关命令</a></li>
+        <li><a href="#容器相关的命令">容器相关的命令</a></li>
+        <li><a href="#容器停止与启动和目录挂载">容器停止与启动和目录挂载</a></li>
       </ul>
     </li>
   </ul>
 </nav>
                 
-                <h2 id="三种模式命令行插入底行模式">三种模式：命令行、插入、底行模式</h2>
-<h3 id="切换到命令行模式按esc键">切换到命令行模式：按Esc键</h3>
-<h3 id="切换到插入模式按-i-oa键">切换到插入模式：按 i 、o、a键</h3>
-<p>i 在当前位置生前插入<br>
-I 在当前行首插入<br>
-a 在当前位置后插入<br>
-A 在当前行尾插入<br>
-o 在当前行之后插入一行<br>
-O 在当前行之前插入一行</p>
-<h3 id="切换到底行模式按-冒号">切换到底行模式：按 :（冒号）</h3>
-<h3 id="保存并退出escwq">保存并退出：esc:wq</h3>
-<h3 id="不保存退出escq">不保存退出：esc:q!</h3>
-<h3 id="搜索文件中的内容xxx">搜索文件中的内容：:/xxx</h3>
-<h2 id="重定向输出和">重定向输出&gt;和&raquo;</h2>
-<p>重定向输出，覆盖原有内容&gt;<br>
-cat   /etc/passwd   &gt;   a.txt   将输出重定向到a.txt中<br>
-重定向输出，又追加功能&raquo;<br>
-cat   /etc/passwd   &raquo;   a.txt   输出并且追加</p>
+                <h2 id="镜像相关命令">镜像相关命令</h2>
+<h4 id="查看镜像">查看镜像</h4>
+<p>docker images</p>
+<p>REPOSITOPY：镜像名称<br>
+TAG：镜像标签<br>
+IMAGE ID：镜像ID<br>
+CREATE：镜像的创建日期（不是获取该镜像的日期）<br>
+SIZE：镜像大小<br>
+这些镜像都存储在Docker宿主机的/var/lib/docker目录下</p>
+<h4 id="搜索镜像">搜索镜像</h4>
+<p>docker search 镜像名称</p>
+<p>NAME：仓库名称<br>
+DESCRIPTION：镜像描述<br>
+STARS：用户评价，反应一个镜像的受欢迎程度<br>
+OFFICIAL：是否官方<br>
+AUTOMATEO：自动创建，表示该镜像由Docker Hub自动构建流程创建的</p>
+<h4 id="拉取镜像">拉取镜像</h4>
+<p>拉取镜像就是从中央仓库中下载镜像到本地<br>
+docker pull 镜像名称<br>
+docker pull centos:7（7是标签）</p>
+<h4 id="删除镜像">删除镜像</h4>
+<p>按镜像ID或名称删除镜像<br>
+docker rmi 镜像id</p>
+<p>删除所有镜像<br>
+docker rmi `docker images -q`（引号是ESC键下的键敲出的）</p>
+<h2 id="容器相关的命令">容器相关的命令</h2>
+<h4 id="查看容器">查看容器</h4>
+<p>查看正在运行的容器<br>
+docker ps<br>
+查看所有容器<br>
+docker ps -a<br>
+查看最后一次运行的容器<br>
+docker ps -f status=exited</p>
+<h4 id="创建与启动容器">创建与启动容器</h4>
+<p>创建容器常用的参数说明：<br>
+创建容器命令：docker run<br>
+-i：表示运行容器<br>
+-t：表示容器启动后会进入其命令行。加入这两个参数后，容器创建就能登录进去。即分配一个伪终端<br>
+&ndash;name :为创建的容器命名<br>
+-v：表示目录映射关系（前者是宿主机目录，后者是映射到宿主机上的目录），可以使用多个－v做多个目录或文件映射。<br>
+注意：最好做目录映射，在宿主机上做修改，然后共享到容器上。<br>
+-d：在run后面加上-d参数,则会创建一个守护式容器在后台运行（这样创建容器后不会自动登录容器，如果只加-i -t两个参数，<br>
+创建后就会自动进去容器）<br>
+-p：表示端口映射，前者是宿主机端口，后者是容器内的映射端口。可以使用多个-p做多个端口映射<br>
+（1）交互式方式创建容器<br>
+docker run -it &ndash;name=容器名称 镜像名称:标签 /bin/bash（centos系统命令）<br>
+这时我们通过ps命令查看，发现可以看到启动的容器，状态为启动状态<br>
+退出当前容器<br>
+exit<br>
+（2）守护式方式创建容器： <br>
+docker run -di &ndash;name=容器名称 镜像名称:标签<br>
+登录守护式容器方式：<br>
+docker exec -it 容器名称 (或者容器ID) /bin/bash</p>
+<h2 id="容器停止与启动和目录挂载">容器停止与启动和目录挂载</h2>
+<h4 id="容器启动">容器启动</h4>
+<p>docker start 容器名称（或者容器ID）</p>
+<h4 id="容器停止">容器停止</h4>
+<p>docker stop 容器名称（或者容器ID）</p>
+<h4 id="容器拷贝">容器拷贝</h4>
+<p>如果我们需要将文件拷贝到容器内可以使用cp命令<br>
+docker cp 需要拷贝的文件或目录 容器名称:容器目录<br>
+也可以将文件从容器内拷贝出来<br>
+docker cp 容器名称:容器目录 需要拷贝的文件或目录</p>
+<h4 id="目录挂载">目录挂载</h4>
 
 
                 
@@ -285,15 +332,10 @@ cat   /etc/passwd   &raquo;   a.txt   输出并且追加</p>
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/Docker%e5%ae%89%e8%a3%85/" data-toggle="tooltip" data-placement="top" title="Docker安装">&larr;
+                        <a href="/Vi%e5%92%8cVim%e7%bc%96%e8%be%91%e5%99%a8/" data-toggle="tooltip" data-placement="top" title="Vi和Vim编辑器">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/Docker%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4/" data-toggle="tooltip" data-placement="top" title="Docker常用命令">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
 
