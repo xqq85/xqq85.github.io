@@ -222,38 +222,38 @@
                 
                 <h2 id="镜像相关命令">镜像相关命令</h2>
 <h4 id="查看镜像">查看镜像</h4>
-<p>docker images</p>
-<p>REPOSITOPY：镜像名称<br>
+<pre><code>docker images  
+</code></pre><p>REPOSITOPY：镜像名称<br>
 TAG：镜像标签<br>
 IMAGE ID：镜像ID<br>
 CREATE：镜像的创建日期（不是获取该镜像的日期）<br>
 SIZE：镜像大小<br>
 这些镜像都存储在Docker宿主机的/var/lib/docker目录下</p>
 <h4 id="搜索镜像">搜索镜像</h4>
-<p>docker search 镜像名称</p>
-<p>NAME：仓库名称<br>
+<pre><code>docker search 镜像名称  
+</code></pre><p>NAME：仓库名称<br>
 DESCRIPTION：镜像描述<br>
 STARS：用户评价，反应一个镜像的受欢迎程度<br>
 OFFICIAL：是否官方<br>
 AUTOMATEO：自动创建，表示该镜像由Docker Hub自动构建流程创建的</p>
 <h4 id="拉取镜像">拉取镜像</h4>
-<p>拉取镜像就是从中央仓库中下载镜像到本地<br>
-docker pull 镜像名称<br>
-docker pull centos:7（7是标签）</p>
-<h4 id="删除镜像">删除镜像</h4>
-<p>按镜像ID或名称删除镜像<br>
-docker rmi 镜像id</p>
-<p>删除所有镜像<br>
-docker rmi `docker images -q`（引号是ESC键下的键敲出的）</p>
-<h2 id="容器相关的命令">容器相关的命令</h2>
+<p>拉取镜像就是从中央仓库中下载镜像到本地</p>
+<pre><code>docker pull 镜像名称  
+</code></pre><pre><code>docker pull centos:7（7是标签）  
+</code></pre><h4 id="删除镜像">删除镜像</h4>
+<p>按镜像ID或名称删除镜像</p>
+<pre><code>docker rmi 镜像id  
+</code></pre><p>删除所有镜像</p>
+<pre><code>docker rmi \`docker images -q\`（引号是ESC键下的键敲出的） 
+</code></pre><h2 id="容器相关的命令">容器相关的命令</h2>
 <h4 id="查看容器">查看容器</h4>
-<p>查看正在运行的容器<br>
-docker ps<br>
-查看所有容器<br>
-docker ps -a<br>
-查看最后一次运行的容器<br>
-docker ps -f status=exited</p>
-<h4 id="创建与启动容器">创建与启动容器</h4>
+<p>查看正在运行的容器</p>
+<pre><code>docker ps  
+</code></pre><p>查看所有容器</p>
+<pre><code>docker ps -a  
+</code></pre><p>查看最后一次运行的容器</p>
+<pre><code>docker ps -f status=exited  
+</code></pre><h4 id="创建与启动容器">创建与启动容器</h4>
 <p>创建容器常用的参数说明：<br>
 创建容器命令：docker run<br>
 -i：表示运行容器<br>
@@ -264,27 +264,40 @@ docker ps -f status=exited</p>
 -d：在run后面加上-d参数,则会创建一个守护式容器在后台运行（这样创建容器后不会自动登录容器，如果只加-i -t两个参数，<br>
 创建后就会自动进去容器）<br>
 -p：表示端口映射，前者是宿主机端口，后者是容器内的映射端口。可以使用多个-p做多个端口映射<br>
-（1）交互式方式创建容器<br>
-docker run -it &ndash;name=容器名称 镜像名称:标签 /bin/bash（centos系统命令）<br>
-这时我们通过ps命令查看，发现可以看到启动的容器，状态为启动状态<br>
-退出当前容器<br>
-exit<br>
-（2）守护式方式创建容器： <br>
-docker run -di &ndash;name=容器名称 镜像名称:标签<br>
-登录守护式容器方式：<br>
-docker exec -it 容器名称 (或者容器ID) /bin/bash</p>
-<h2 id="容器停止与启动和目录挂载">容器停止与启动和目录挂载</h2>
+（1）交互式方式创建容器</p>
+<pre><code>docker run -it --name=容器名称 镜像名称:标签 /bin/bash（centos系统命令）  
+</code></pre><p>这时我们通过ps命令查看，发现可以看到启动的容器，状态为启动状态<br>
+退出当前容器</p>
+<pre><code>exit  
+</code></pre><p>（2）守护式方式创建容器：</p>
+<pre><code>docker run -di --name=容器名称 镜像名称:标签  
+</code></pre><p>登录守护式容器方式：</p>
+<pre><code>docker exec -it 容器名称 (或者容器ID) /bin/bash  
+</code></pre><h2 id="容器停止与启动和目录挂载">容器停止与启动和目录挂载</h2>
 <h4 id="容器启动">容器启动</h4>
-<p>docker start 容器名称（或者容器ID）</p>
-<h4 id="容器停止">容器停止</h4>
-<p>docker stop 容器名称（或者容器ID）</p>
-<h4 id="容器拷贝">容器拷贝</h4>
-<p>如果我们需要将文件拷贝到容器内可以使用cp命令<br>
-docker cp 需要拷贝的文件或目录 容器名称:容器目录<br>
-也可以将文件从容器内拷贝出来<br>
-docker cp 容器名称:容器目录 需要拷贝的文件或目录</p>
-<h4 id="目录挂载">目录挂载</h4>
-
+<pre><code>docker start 容器名称（或者容器ID）  
+</code></pre><h4 id="容器停止">容器停止</h4>
+<pre><code>docker stop 容器名称（或者容器ID）  
+</code></pre><h4 id="容器拷贝">容器拷贝</h4>
+<p>如果我们需要将文件拷贝到容器内可以使用cp命令</p>
+<pre><code>docker cp 需要拷贝的文件或目录 容器名称:容器目录  
+</code></pre><p>也可以将文件从容器内拷贝出来</p>
+<pre><code>docker cp 容器名称:容器目录 需要拷贝的文件或目录  
+</code></pre><h4 id="目录挂载">目录挂载</h4>
+<p>我们可以在创建容器的时候，将宿主机的目录与容器的目录进行映射，这样我们就可以通过修改宿主机某个目录的文件从而去影响容器。
+创建容器添加-v参数后变为宿主机目录:容器目录，例如，</p>
+<pre><code>docker run -di -v /usr/local/myhtml --name=mycentos:7  
+</code></pre><p>如果你共享的是多级目录，可能会出现权限不足的提示。<br>
+这是因为Centos7中的安全模块selinux把权限禁掉了，我们需要添加参数 &ndash;privileged=true 来解决挂载的目录没有权限的问题</p>
+<h4 id="查看容器的ip地址">查看容器的IP地址</h4>
+<p>我们可以通过以下的命令查看容器运行的各种数据</p>
+<pre><code>docker inspect 容器名称（容器ID）  
+</code></pre><p>也可以直接执行下面的命令直接输出IP地址</p>
+<pre><code>docker inspect --format='{{.NetworkSettings.IPAddress}}' &amp;nbsp; 容器名称（容器ID）  
+</code></pre><h4 id="删除容器">删除容器</h4>
+<p>删除指定容器（先停止指定容器）</p>
+<pre><code>docker rm 容器名称（容器ID）  
+</code></pre>
 
                 
                 
@@ -332,10 +345,15 @@ docker cp 容器名称:容器目录 需要拷贝的文件或目录</p>
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/Vi%e5%92%8cVim%e7%bc%96%e8%be%91%e5%99%a8/" data-toggle="tooltip" data-placement="top" title="Vi和Vim编辑器">&larr;
+                        <a href="/Docker%e5%ae%89%e8%a3%85/" data-toggle="tooltip" data-placement="top" title="Docker安装">&larr;
                             Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/Docker%e5%b8%b8%e7%94%a8%e5%ba%94%e7%94%a8%e9%83%a8%e7%bd%b2/" data-toggle="tooltip" data-placement="top" title="Docker常用应用部署">Next
+                            Post &rarr;</a>
+                    </li>
                     
                 </ul>
 

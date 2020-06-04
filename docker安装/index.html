@@ -180,7 +180,7 @@
                             徐强强
                          
                         on 
-                        Monday, May 25, 2020
+                        Monday, June 1, 2020
                         
                         
                         
@@ -223,31 +223,31 @@
                 <h2 id="docker安装官方建议安装在ubuntu操作系统">Docker安装（官方建议安装在Ubuntu操作系统）</h2>
 <p>Tips：如果安装在CentOS操作系统下，建议安装在CentOS7.X以上的版本</p>
 <h4 id="yum包更新到最新">yum包更新到最新</h4>
-<p>sudo yum update</p>
-<h4 id="安装需要的软件包yum-util提供的yum-config-manager功能另外两个是devicemapper驱动依赖的">安装需要的软件包，yum-util提供的yum-config-manager功能，另外两个是devicemapper驱动依赖的</h4>
-<p>sudo yum install -y yum-utils device-mapper-persistent-data lvm2</p>
-<h4 id="设置yum源为阿里云">设置yum源为阿里云</h4>
-<p>sudo yum-config-manager &ndash;add-repo <a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a></p>
-<h4 id="安装docker">安装Docker</h4>
-<p>sudo yum install docker-ce</p>
-<h4 id="安装后查看docker版本">安装后查看docker版本</h4>
-<p>docker -v</p>
-<h2 id="设置ustc的镜像为了快速拉取镜像文件">设置ustc的镜像（为了快速拉取镜像文件）</h2>
+<pre><code>sudo yum update  
+</code></pre><h4 id="安装需要的软件包yum-util提供的yum-config-manager功能另外两个是devicemapper驱动依赖的">安装需要的软件包，yum-util提供的yum-config-manager功能，另外两个是devicemapper驱动依赖的</h4>
+<pre><code>sudo yum install -y yum-utils device-mapper-persistent-data lvm2  
+</code></pre><h4 id="设置yum源为阿里云">设置yum源为阿里云</h4>
+<pre><code>sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo  
+</code></pre><h4 id="安装docker">安装Docker</h4>
+<pre><code>sudo yum install docker-ce  
+</code></pre><h4 id="安装后查看docker版本">安装后查看docker版本</h4>
+<pre><code>docker -v  
+</code></pre><h2 id="设置ustc的镜像为了快速拉取镜像文件">设置ustc的镜像（为了快速拉取镜像文件）</h2>
 <p>ustc是老牌的Linux镜像服务器提供者了，还在遥远的ubuntu5.04版本的时候就在用。ustc的docker镜像加速器很快。ustc docker mirror的优势之一就是不需要注册，是真正的公共服务。</p>
 <h4 id="编辑该文件">编辑该文件</h4>
-<p>vi /etc/docker/daemon.json</p>
-<h4 id="在该文件中输入如下内容">在该文件中输入如下内容：</h4>
-<p>{<br>
-    &ldquo;registry-mirrors&rdquo;: [&ldquo;https://docker.mirrors.ustc.edu.cn&rdquo;]<br>
-}</p>
-<h2 id="docker启动与停止">docker启动与停止</h2>
-<p>启动docker：  systemctl start docker<br>
-停止docker：  systemctl stop docker<br>
-重启docker：  systemctl restart docker<br>
-查看docker状态：  systemctl status docker<br>
-开机启动：  systemctl enable docker<br>
-查看docker概要信息  docker info<br>
-查看docker帮助文档  docker &ndash;help</p>
+<pre><code>vi /etc/docker/daemon.json  
+</code></pre><h4 id="在该文件中输入如下内容">在该文件中输入如下内容：</h4>
+<pre><code>{  
+&amp;nbsp; &amp;nbsp; &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn&quot;]  
+}  
+</code></pre><h2 id="docker启动与停止">docker启动与停止</h2>
+<p>启动 <code>docker：  systemctl start docker</code><br>
+停止 <code>docker：  systemctl stop docker</code><br>
+重启 <code>docker：  systemctl restart docker</code><br>
+查看docker状态： <code>systemctl status docker</code><br>
+开机启动： <code>systemctl enable docker</code><br>
+查看docker概要信息： <code>docker info</code><br>
+查看docker帮助文档： <code>docker --help</code></p>
 
 
                 
@@ -296,13 +296,13 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/Linux%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4/" data-toggle="tooltip" data-placement="top" title="Linux常用命令">&larr;
+                        <a href="/Vi%e5%92%8cVim%e7%bc%96%e8%be%91%e5%99%a8/" data-toggle="tooltip" data-placement="top" title="Vi和Vim编辑器">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/Vi%e5%92%8cVim%e7%bc%96%e8%be%91%e5%99%a8/" data-toggle="tooltip" data-placement="top" title="Vi和Vim编辑器">Next
+                        <a href="/Docker%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4/" data-toggle="tooltip" data-placement="top" title="Docker常用命令">Next
                             Post &rarr;</a>
                     </li>
                     
