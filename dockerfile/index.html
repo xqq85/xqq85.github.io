@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="Docker安装" />
-    <meta property="og:title" content="Docker安装" />
-    <meta property="twitter:title" content="Docker安装" />
+    <meta name="title" content="DockerFile" />
+    <meta property="og:title" content="DockerFile" />
+    <meta property="twitter:title" content="DockerFile" />
     
 
     
-    <meta name="description" content="Docker安装">
-    <meta property="og:description" content="Docker安装" />
-    <meta property="twitter:description" content="Docker安装" />
+    <meta name="description" content="DockerFile">
+    <meta property="og:description" content="DockerFile" />
+    <meta property="twitter:description" content="DockerFile" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="徐强强, xuqiangqiang, xuqiangqiang, , 徐强强的网络日志, 徐强强的博客, xuqiangqiang Blog, 博客, 个人网站, 互联网, Web, 云原生, 微服务, Microservice">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Docker安装-徐强强的博客 | xuqiangqiang Blog</title>
+    <title>DockerFile-徐强强的博客 | xuqiangqiang Blog</title>
 
-    <link rel="canonical" href="/Docker%e5%ae%89%e8%a3%85/">
+    <link rel="canonical" href="/DockerFile/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -157,7 +157,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/linuxinstall.jpg')
+        background-image: url('/img/dockerimages.jpg')
     }
 </style>
 <header class="intro-header">
@@ -172,7 +172,7 @@
                         </a>
                         
                     </div>
-                    <h1>Docker安装</h1>
+                    <h1>DockerFile</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 
@@ -180,7 +180,7 @@
                             徐强强
                          
                         on 
-                        Monday, June 1, 2020
+                        Wednesday, June 3, 2020
                         
                         
                         
@@ -212,43 +212,56 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#docker安装官方建议安装在ubuntu操作系统">Docker安装（官方建议安装在Ubuntu操作系统）</a></li>
-        <li><a href="#设置ustc的镜像为了快速拉取镜像文件">设置ustc的镜像（为了快速拉取镜像文件）</a></li>
-        <li><a href="#docker启动与停止">docker启动与停止</a></li>
+        <li><a href="#什么是dockerfile">什么是Dockerfile</a></li>
+        <li><a href="#常用命令">常用命令</a></li>
+        <li><a href="#使用脚本创建镜像">使用脚本创建镜像</a></li>
       </ul>
     </li>
   </ul>
 </nav>
                 
-                <h2 id="docker安装官方建议安装在ubuntu操作系统">Docker安装（官方建议安装在Ubuntu操作系统）</h2>
-<p>Tips：如果安装在CentOS操作系统下，建议安装在CentOS7.X以上的版本</p>
-<h4 id="yum包更新到最新">yum包更新到最新</h4>
-<pre><code>sudo yum update  
-</code></pre><h4 id="安装需要的软件包yum-util提供的yum-config-manager功能另外两个是devicemapper驱动依赖的">安装需要的软件包，yum-util提供的yum-config-manager功能，另外两个是devicemapper驱动依赖的</h4>
-<pre><code>sudo yum install -y yum-utils device-mapper-persistent-data lvm2  
-</code></pre><h4 id="设置yum源为阿里云">设置yum源为阿里云</h4>
-<pre><code>sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo  
-</code></pre><h4 id="安装docker">安装Docker</h4>
-<pre><code>sudo yum install docker-ce  
-</code></pre><h4 id="安装后查看docker版本">安装后查看docker版本</h4>
-<pre><code>docker -v  
-</code></pre><h2 id="设置ustc的镜像为了快速拉取镜像文件">设置ustc的镜像（为了快速拉取镜像文件）</h2>
-<p>ustc是老牌的Linux镜像服务器提供者了，还在遥远的ubuntu5.04版本的时候就在用。ustc的docker镜像加速器很快。ustc docker mirror的优势之一就是不需要注册，是真正的公共服务。</p>
-<h4 id="编辑该文件">编辑该文件</h4>
-<pre><code>vi /etc/docker/daemon.json  
-</code></pre><h4 id="在该文件中输入如下内容">在该文件中输入如下内容：</h4>
-<pre><code>{  
-&amp;nbsp; &amp;nbsp; &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn&quot;]  
-}  
-</code></pre><h2 id="docker启动与停止">docker启动与停止</h2>
-<p>启动 <code>docker：  systemctl start docker</code><br>
-停止 <code>docker：  systemctl stop docker</code><br>
-重启 <code>docker：  systemctl restart docker</code><br>
-查看docker状态： <code>systemctl status docker</code><br>
-开机启动： <code>systemctl enable docker</code><br>
-查看docker概要信息： <code>docker info</code><br>
-查看docker帮助文档： <code>docker --help</code></p>
-
+                <h2 id="什么是dockerfile">什么是Dockerfile</h2>
+<p>Dockerfile是由一系列命令和参数构成的脚本，这些命令应用于基础镜像并最终创建一个新的镜像。</p>
+<p>1、对于开发人员：可以为开发团队提供一个完全一致的开发环境；<br>
+2、对于测试人员：可以直接拿开发时所构建的镜像或者通过Dockerfile文件构建一个新的镜像开始工作了；<br>
+3、对于运维人员：在部署时，可以实现应用的无缝移植。</p>
+<h2 id="常用命令">常用命令</h2>
+<p>| 命令                               | 作用                                 |</p>
+<p>| &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- |</p>
+<p>| FROM image_name:tag                | 定义了使用哪个基础镜像启动构建流程                  |</p>
+<p>| MAINTAINER user_name               | 声明镜像的创建者                           |</p>
+<p>| ENV key value                      | 设置环境变量 (可以写多条)                     |</p>
+<p>| RUN command                        | 是Dockerfile的核心部分(可以写多条)            |</p>
+<p>| ADD source_dir/file dest_dir/file  | 将宿主机的文件复制到容器内，如果是一个压缩文件，将会在复制后自动解压 |</p>
+<p>| COPY source_dir/file dest_dir/file | 和ADD相似，但是如果有压缩文件并不能解压              |</p>
+<p>| WORKDIR path_dir                   | 设置工作目录                             |</p>
+<h2 id="使用脚本创建镜像">使用脚本创建镜像</h2>
+<p>步骤：</p>
+<h5 id="1创建目录">1.创建目录</h5>
+<pre><code>mkdir –p /usr/local/dockerjdk8
+</code></pre><h5 id="2下载jdk-8u171-linux-x64targz并上传到服务器虚拟机中的usrlocaldockerjdk8目录">2.下载jdk-8u171-linux-x64.tar.gz并上传到服务器（虚拟机）中的/usr/local/dockerjdk8目录</h5>
+<h5 id="3创建文件dockerfile">3.创建文件Dockerfile</h5>
+<pre><code>vi Dockerfile
+</code></pre><p>#依赖镜像名称和ID</p>
+<pre><code>FROM centos:7  
+</code></pre><p>#指定镜像创建者信息</p>
+<pre><code>MAINTAINER itcast    
+</code></pre><p>#切换工作目录</p>
+<pre><code>WORKDIR /usr  
+</code></pre><pre><code>RUN mkdir  /usr/local/java  
+</code></pre><p>#ADD 是相对路径jar,把java添加到容器中</p>
+<pre><code>ADD jdk-8u171-linux-x64.tar.gz /usr/local/java/  
+</code></pre><p>#配置java环境变量</p>
+<pre><code>ENV JAVA_HOME /usr/local/java/jdk1.8.0_171  
+</code></pre><pre><code>ENV JRE_HOME $JAVA_HOME/jre  
+</code></pre><pre><code>ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib:$CLASSPATH  
+</code></pre><pre><code>ENV PATH $JAVA_HOME/bin:$PATH  
+</code></pre><h5 id="4执行命令构建镜像">4.执行命令构建镜像</h5>
+<pre><code>docker build -t='jdk1.8' .（点表示当前目录，有Dockerfile文件）  
+</code></pre><p>注意后边的空格和点，不要省略</p>
+<h5 id="5查看镜像是否建立完成">5.查看镜像是否建立完成</h5>
+<pre><code>docker images
+</code></pre>
 
                 
                 
@@ -296,13 +309,13 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/Vi%e5%92%8cVim%e7%bc%96%e8%be%91%e5%99%a8/" data-toggle="tooltip" data-placement="top" title="Vi和Vim编辑器">&larr;
+                        <a href="/Docker%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4/" data-toggle="tooltip" data-placement="top" title="Docker常用命令">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/Docker%e7%a7%81%e6%9c%89%e4%bb%93%e5%ba%93/" data-toggle="tooltip" data-placement="top" title="Docker私有仓库">Next
+                        <a href="/Docker%e5%b8%b8%e7%94%a8%e5%ba%94%e7%94%a8%e9%83%a8%e7%bd%b2/" data-toggle="tooltip" data-placement="top" title="Docker常用应用部署">Next
                             Post &rarr;</a>
                     </li>
                     
